@@ -44,6 +44,7 @@ for (var i = 0; i < userGuess.length; i++) {
  } 
     // Trying to make the guess match a letter in the generated word
     	var correctGuess = [];
+    	var incorrectGuess = [];
     	for (var i = 0; i < theWord.length; i++) {
     		theWord[i]
     	if (challengeGuess.indexOf(theWord[i])) {
@@ -51,7 +52,9 @@ for (var i = 0; i < userGuess.length; i++) {
 	// } else if{
 	// 	console.log("yes");
 	// }
-		challengeGuess.push(correctGuess);
+		challengeGuess.push(incorrectGuess);
+   } else {
+   	challengeGuess.push(correctGuess);
    		console.log(correctGuess);
    }
 }
