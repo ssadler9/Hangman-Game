@@ -1,0 +1,21 @@
+word {
+	
+}
+
+word-bank{
+	visibility: ;
+}
+
+.container {
+	width: 420px;
+	height: 200px;
+	border-style: solid;
+	float: left;
+	margin: 0px;
+	margin-left: 50px;
+}
+
+.col-6 {
+	float: left;
+	margin: 0px;
+}
