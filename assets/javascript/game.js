@@ -43,6 +43,7 @@ document.onkeyup = function(event) {
             incorrectGuess.push(challengeGuess);
             // incorrectGuess array is working
             // console.log(incorrectGuess);
+           
         } else {
             // pushes the correctGuesses to an array
             correctGuess.push(challengeGuess);
@@ -66,15 +67,15 @@ document.onkeyup = function(event) {
     printSpaces(answerSpaces);
     printGuesses(guessesRemaining);
 
-    // Game over if statement is working
-    if (guessesRemaining === 0){
-		console.log("Game Over");
+    	// Game over is working as expected
+    	if (guessesRemaining === 0){
+			console.log("Game Over");
 		// You Win if statement isn't doing anything
-	} else if (answerSpaces === theWord) {
-		console.log("You Win!");
-	}
-
+		} else if (answerSpaces == -1) {
+			console.log("You Win");
+		}
 }
+
 
 // Prints the amount of spaces avialable in a theWord
 function printSpaces(answerSpacesParameter) {
