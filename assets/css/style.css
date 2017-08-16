@@ -1,6 +1,4 @@
-word {
-	
-}
+
 
 word-bank{
 	visibility: ;
@@ -12,10 +10,11 @@ word-bank{
 	border-style: solid;
 	float: left;
 	margin: 0px;
-	margin-left: 50px;
+	margin-left: 140px;
 }
 
 .col-6 {
 	float: left;
 	margin: 0px;
+	
 }

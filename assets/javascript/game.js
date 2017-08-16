@@ -35,6 +35,7 @@ document.onkeyup = function(event) {
         // console.log("letter does not exist in word");
         guessesRemaining--;
     };
+
     for (var i = 0; i < theWord.length; i++) {
         //  This will determine whether the userGuess is a letter in the word
         if (challengeGuess.indexOf(theWord[i])) {
@@ -64,6 +65,15 @@ document.onkeyup = function(event) {
     // sets variable to print javascript to HTML
     printSpaces(answerSpaces);
     printGuesses(guessesRemaining);
+
+    // Game over if statement is working
+    if (guessesRemaining === 0){
+		console.log("Game Over");
+		// You Win if statement isn't doing anything
+	} else if (answerSpaces === theWord) {
+		console.log("You Win!");
+	}
+
 }
 
 // Prints the amount of spaces avialable in a theWord
@@ -80,6 +90,8 @@ function printGuesses(guessesRemainingParameter) {
     // querySelector places text into answerspace
     document.querySelector("#guessesRemaining").innerHTML = guesses;
 }	
+
+
 
 printGuesses(guessesRemaining);
 
