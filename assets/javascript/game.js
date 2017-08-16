@@ -17,7 +17,6 @@ printSpaces(answerSpaces);
 // console.log(answerSpaces);
 var guessesRemaining = 9;
 // Game Status Function
-
 function gameStatus(gameStatusParameter){
 	if(answerSpaces.indexOf(" _ ") === -1){
 		var winner = "You Win!";
@@ -29,6 +28,10 @@ function gameStatus(gameStatusParameter){
 }
 // tracks the keys pressed on HTML and matches the key to a letter in the word
 document.onkeyup = function(event) {
+	if (answerSpaces.indexOf(' _ ') === -1 || guessesRemaining === 0) {
+		return;
+	}
+
     var userGuess = event.key;
     // commenting out because userGuess works
     // console.log(userGuess);
@@ -45,6 +48,7 @@ document.onkeyup = function(event) {
     } else {
         // console.log("letter does not exist in word");
         guessesRemaining--;
+        // Math.floor(guessesRemaining === 0);
     };
 
     for (var i = 0; i < theWord.length; i++) {
@@ -83,14 +87,10 @@ document.onkeyup = function(event) {
         	var loser = "Game Over"
         	var gamestatus = "<p>Game Status: " + loser + "</p>";
         	document.querySelector("#gameStatus").innerHTML = gamestatus;
+        	parseInt(guessesRemaining);
     	} 
-        	gameStatus();
-    	
+    gameStatus();
 }
-    
-
-
-
 // Prints the amount of spaces avialable in a theWord
 function printSpaces(answerSpacesParameter) {
     var html =
@@ -100,7 +100,6 @@ function printSpaces(answerSpacesParameter) {
 }
 // Shows the amount of Guesses remaining before player loses
 function printGuesses(guessesRemainingParameter) {
-
     var guesses ="<p>Guesses Remaining: " + guessesRemaining + "</p>";
     // querySelector places text into answerspace
     document.querySelector("#guessesRemaining").innerHTML = guesses;
