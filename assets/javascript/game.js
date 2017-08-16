@@ -5,7 +5,7 @@ var letterGuessed = [];
 var letterBank = ["a ", "b ", "c ", "d ", "e ", "f ", "g ", "h ", "i ", "j ", "k ", "l ", "m ", "n ", "o ", "p ", "q ", "r ", "s ", "t ", "u ", "v ", "w ", "x ", "y ", "z "];
 // Randomly chooses words to guess
 var theWord = word[Math.floor(Math.random() * word.length)];
-console.log(theWord);
+// console.log(theWord);
 // Counts the length of the string, and displays _ spaces
 var answerSpaces = [];
 for (var i = 0; i < theWord.length; i++) {
@@ -67,7 +67,6 @@ document.onkeyup = function(event) {
             // console.log(answerSpaces);
             // correctGuess array is working
             // console.log(correctGuess);
-
         }
     }
     // Display letters chosen in the corresponding blank space
