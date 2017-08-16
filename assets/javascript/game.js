@@ -16,6 +16,16 @@ printSpaces(answerSpaces);
 // answerSpaces is working
 // console.log(answerSpaces);
 var guessesRemaining = 9;
+// Game Status Function
+function gameStatus(gameStatusParameter){
+	if(answerSpaces.indexOf(" _ ") === -1){
+		var gamestatus =
+        "<p>Game Status: " + gamestatus + "</p>";
+    // querySelector places text gameStatus
+    document.querySelector("#gameStatus").innerHTML = gamestatus;
+        // console.log("yo you won");
+    }
+}
 // tracks the keys pressed on HTML and matches the key to a letter in the word
 document.onkeyup = function(event) {
     var userGuess = event.key;
@@ -52,6 +62,7 @@ document.onkeyup = function(event) {
             // console.log(answerSpaces);
             // correctGuess array is working
             // console.log(correctGuess);
+
         }
     }
     // Display letters chosen in the corresponding blank space
@@ -67,14 +78,16 @@ document.onkeyup = function(event) {
     printSpaces(answerSpaces);
     printGuesses(guessesRemaining);
 
-    	// Game over is working as expected
-    	if (guessesRemaining === 0){
-			console.log("Game Over");
-		// You Win if statement isn't doing anything
-		} else if (answerSpaces == -1) {
-			console.log("You Win");
-		}
+		if (guessesRemaining === 0){
+        	console.log("Game Over");
+        	var gamestatus = "<p>Game Status: " + gamestatus + "</p>";
+        	document.querySelector("#gameStatus").innerHTML = gamestatus;
+    	} 
+        	gameStatus();
+    	
 }
+    
+
 
 
 // Prints the amount of spaces avialable in a theWord
