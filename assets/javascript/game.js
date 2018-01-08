@@ -20,7 +20,7 @@ var guessesRemaining = 9;
 function gameStatus(gameStatusParameter){
 	if(answerSpaces.indexOf(" _ ") === -1){
 		var winner = "You Win!";
-		var gamestatus = "<p>Game Status: " + winner + "</p>";
+		var gamestatus = "<h3>Game Status: " + winner + "</h3>";
     // querySelector places text gameStatus
     document.querySelector("#gameStatus").innerHTML = gamestatus;
         
@@ -84,7 +84,7 @@ document.onkeyup = function(event) {
 
 		if (guessesRemaining === 0){
         	var loser = "Game Over"
-        	var gamestatus = "<p>Game Status: " + loser + "</p>";
+        	var gamestatus = "<h3>Game Status: " + loser + "</h3>";
         	document.querySelector("#gameStatus").innerHTML = gamestatus;
         	parseInt(guessesRemaining);
     	} 
@@ -93,13 +93,13 @@ document.onkeyup = function(event) {
 // Prints the amount of spaces avialable in a theWord
 function printSpaces(answerSpacesParameter) {
     var html =
-        "<p>Word to Guess: " + answerSpacesParameter + "</p>";
+        "<h3>Word to Guess: " + answerSpacesParameter + "</h3>";
     // querySelector places text into answerspace
     document.querySelector("#answerSpaces").innerHTML = html;
 }
 // Shows the amount of Guesses remaining before player loses
 function printGuesses(guessesRemainingParameter) {
-    var guesses ="<p>Guesses Remaining: " + guessesRemaining + "</p>";
+    var guesses ="<h3>Guesses Remaining: " + guessesRemaining + "</h3>";
     // querySelector places text into answerspace
     document.querySelector("#guessesRemaining").innerHTML = guesses;
 }	
